@@ -62,6 +62,7 @@ done
 # TV Core
 PRODUCT_PACKAGES += \\
     LeanbackIme \\
+    TungstenLEDService  \\
     com.google.widevine.software.drm \\
     AtvRemoteService \\
     GlobalKeyInterceptor \\
