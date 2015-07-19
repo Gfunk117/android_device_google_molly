@@ -1,29 +1,50 @@
-bin/tf_daemon
+# ATV Core
+-app/LeanbackIme/LeanbackIme.apk
+etc/permissions/com.google.widevine.software.drm.xml
+-framework/com.google.widevine.software.drm.jar
+lib/libatv_uinputbridge.so
+-priv-app/AtvRemoteService/AtvRemoteService.apk
+-priv-app/GlobalKeyInterceptor/GlobalKeyInterceptor.apk
+-priv-app/LeanbackLauncher/LeanbackLauncher.apk
+-priv-app/RemoteControlService/RemoteControlService.apk
+-priv-app/TV/TV.apk
+
+# Audio
+lib/hw/audio.primary.molly.so
+lib/libmolly_audio.so
+lib/libremotecontrolservice.so
+
+# BT/Wifi firmware
+vendor/firmware/mrvl/sd8797_uapsta.bin
+vendor/firmware/mrvl/txpower_JP.bin
+vendor/firmware/mrvl/txpower_US.bin
+
+# DRM
 etc/DxDrmConfig.txt
+lib/libdrmdecrypt.so
+lib/libDxDrmServer.so
+lib/liboemcrypto.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/mediadrm/libDxModularPluginNv.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
+# Graphics
 etc/enctune.conf
-etc/firmware/nvavp_aud_ucode.bin
-etc/firmware/nvavp_os_0ff00000.bin
-etc/firmware/nvavp_os_eff00000.bin
-etc/firmware/nvavp_vid_ucode_alt.bin
-etc/firmware/tegra11x/nvhost_msenc02.fw
-etc/firmware/tegra11x/nvhost_tsec.fw
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
 lib/egl/libGLESv2_tegra.so
-lib/hw/audio.primary.molly.so
 lib/hw/gralloc.tegra4.so
 lib/hw/hdmi_cec.tegra4.so
 lib/hw/hwcomposer.tegra4.so
-lib/hw/keystore.molly.so
 lib/libardrv_dynamic.so
 lib/libcgdrv.so
 lib/libcplconnectclient.so
-lib/libdrmdecrypt.so
-lib/libDxDrmServer.so
 lib/libEGL_tegra_impl.so
 lib/libGLESv1_CM_tegra_impl.so
 lib/libGLESv2_tegra_impl.so
-lib/libmolly_audio.so
 lib/libnvapputil.so
 lib/libnvavp.so
 lib/libnvblit.so
@@ -61,18 +82,25 @@ lib/libnvtnr.so
 lib/libnvtvmr.so
 lib/libnvwinsys.so
 lib/libnvwsi.so
-lib/libremotecontrolservice.so
 lib/libstagefrighthw.so
 lib/libtf_crypto_sst.so
 lib/libtsechdcp.so
 lib/libtsec_wrapper.so
-vendor/firmware/mrvl/sd8797_uapsta.bin
-vendor/firmware/mrvl/txpower_JP.bin
-vendor/firmware/mrvl/txpower_US.bin
-vendor/lib/drm/libdrmwvmplugin.so
+
+# Graphics firmware
+etc/firmware/nvavp_aud_ucode.bin
+etc/firmware/nvavp_os_0ff00000.bin
+etc/firmware/nvavp_os_eff00000.bin
+etc/firmware/nvavp_vid_ucode_alt.bin
+etc/firmware/tegra11x/nvhost_msenc02.fw
+etc/firmware/tegra11x/nvhost_tsec.fw
+
+# Keystore
+lib/hw/keystore.molly.so
+lib/libtf_crypto_sst.so
+
+# Power
 vendor/lib/hw/power.molly.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/mediadrm/libDxModularPluginNv.so
-vendor/lib/mediadrm/libwvdrmengine.so
+
+# Trusted Foundation daemon
+bin/tf_daemon
