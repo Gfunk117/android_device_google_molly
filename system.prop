@@ -39,6 +39,3 @@ ro.hwui.texture_cache_flushrate=0.4
 
 # don't preload OpenGL in Zygote, the Tegra drivers do not like it
 ro.zygote.disable_gl_preload=true
-
-# Set carrier
-ro.carrier=wifi-only

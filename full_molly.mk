@@ -28,4 +28,6 @@ $(call inherit-product, device/google/molly/device.mk)
 
 PRODUCT_NAME := full_molly
 PRODUCT_DEVICE := molly
-
+PRODUCT_BRAND := google
+PRODUCT_MODEL := ADT-1
+PRODUCT_MANUFACTURER := Google

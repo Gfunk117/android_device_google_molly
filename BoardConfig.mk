@@ -27,18 +27,16 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
 # Board
-TARGET_BOARD_PLATFORM := tegra4
 TARGET_BOOTLOADER_BOARD_NAME := molly
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0 smsc95xx.boot_wol_config=0x07 smsc95xx.turbo_mode=N androidboot.selinux=permissive
-# If building TWRP recovery, comment out the two lines below, and uncomment the two below that.
-TARGET_KERNEL_SOURCE := kernel/google/molly
 TARGET_KERNEL_CONFIG := cyanogenmod_molly_defconfig
-# TARGET_PREBUILT_KERNEL := device/google/molly/mini-zImage
-# LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+TARGET_KERNEL_SOURCE := kernel/google/molly
+
+# Platform
+TARGET_BOARD_PLATFORM := tegra4
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -51,8 +49,11 @@ USE_CAMERA_STUB = true
 # Graphics
 USE_OPENGL_RENDERER := true
 
-# Include an expanded selection of fonts
+# Fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Malloc
+MALLOC_IMPL := dlmalloc
 
 # Partition
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -64,22 +65,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Recovery
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_DEVICE_DIRS += device/google/molly
 TARGET_RECOVERY_FSTAB := device/google/molly/rootdir/etc/fstab.molly
 
-# Wifi related defines
-BOARD_HAVE_MARVELL_WIFI          := true
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mrvl
-BOARD_WLAN_DEVICE                := mrvl
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_mrvl
-WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
-WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
-
-# SELINUX Defines
+# SELinux
 #BOARD_SEPOLICY_DIRS := \
 #    device/google/molly/sepolicy
 
@@ -95,7 +84,16 @@ WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
 #    domain.te \
 #    ueventd.te
 
-MALLOC_IMPL := dlmalloc
+# Wifi
+BOARD_HAVE_MARVELL_WIFI          := true
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mrvl
+BOARD_WLAN_DEVICE                := mrvl
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_mrvl
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
 
 # TWRP
 TW_THEME := landscape_hdpi

@@ -134,6 +134,9 @@ on boot
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
     write /sys/block/mmcblk1/queue/read_ahead_kb 2048
 
+    # Wifi
+    setprop wifi.interface wlan0
+
 on fs
 
     mkdir /factory 0775 radio radio
