@@ -122,6 +122,15 @@ LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
+LOCAL_MODULE := TungstenLEDService
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := proprietary/app/TungstenLEDService/TungstenLEDService.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
 LOCAL_MODULE := com.google.widevine.software.drm
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := proprietary/framework/com.google.widevine.software.drm.jar
