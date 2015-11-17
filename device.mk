@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     TvSettings \
     tv_input.default
 
+# Include AppDrawer
+PRODUCT_PACKAGES += \
+    AppDrawer
+
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
      persist.sys.usb.config=mtp
