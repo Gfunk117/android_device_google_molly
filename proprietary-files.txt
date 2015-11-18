@@ -30,6 +30,7 @@ lib/libcgdrv.so
 lib/libcplconnectclient.so
 lib/libdrmdecrypt.so
 lib/libdrmframework.so
+lib/libdrmframework_jni.so
 lib/libDxDrmServer.so
 lib/libEGL_tegra_impl.so
 lib/libGLESv1_CM_tegra_impl.so
@@ -96,4 +97,3 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/mediadrm/libDxModularPluginNv.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/mediadrm/libplayreadydrmplugin.so
