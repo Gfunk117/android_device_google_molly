@@ -20,21 +20,6 @@
 #define BTM_DEF_LOCAL_NAME "Google ADT-1"
 #define BTA_DM_COD {0x20, BTM_COD_MAJOR_AUDIO, BTM_COD_MINOR_SET_TOP_BOX}
 
-
-// Force connection interval to 13.75ms
-#define BTM_BLE_CONN_INT_MIN_DEF 11 /* 13.75ms = 11 * 1.25 */
-#define BTM_BLE_CONN_INT_MAX_DEF BTM_BLE_CONN_INT_MIN_DEF
-
-// Allow better battery life
-#define BTM_BLE_CONN_SLAVE_LATENCY_DEF 24
-
-// Detect disconnects faster
-#define BTM_BLE_CONN_TIMEOUT_DEF 300
-
-// Increase background scanning to reduce reconnect time
-#define BTM_BLE_SCAN_SLOW_INT_1    110    /* 68.75 ms   = 110 *0.625 */
-#define BTM_BLE_SCAN_SLOW_WIN_1    8      /* 5 ms = 8 *0.625 */
-
 // Disable HFP
 #define BTIF_HF_SERVICES (BTA_HSP_SERVICE_MASK)
 #define BTIF_HF_SERVICE_NAMES  { BTIF_HSAG_SERVICE_NAME, NULL }
