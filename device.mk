@@ -27,8 +27,9 @@ PRODUCT_COPY_FILES := \
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Bootanimation
-# TARGET_BOOTANIMATION_NAME := 800
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    device/google/molly/bootanimation.zip:system/media/bootanimation.zip
 
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
