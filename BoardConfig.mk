@@ -35,6 +35,7 @@ TARGET_BOARD_PLATFORM := tegra4
 TARGET_BOOTLOADER_BOARD_NAME := molly
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
+TARGET_TEGRA_VERSION := t114
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -59,8 +60,8 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 1
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0 smsc95xx.boot_wol_config=0x07 smsc95xx.turbo_mode=N androidboot.selinux=permissive
 # If building TWRP recovery, comment out the two lines below, and uncomment the two below that.
-TARGET_KERNEL_SOURCE := kernel/google/molly
-TARGET_KERNEL_CONFIG := cyanogenmod_molly_defconfig
+# TARGET_KERNEL_SOURCE := kernel/google/molly
+# TARGET_KERNEL_CONFIG := cyanogenmod_molly_defconfig
 # TARGET_PREBUILT_KERNEL := device/google/molly/mini-zImage
 # LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 
@@ -70,6 +71,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13912506368
+BOARD_CACHEIMAGE_PARTITION_SIZE := 734003200
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Recovery
@@ -86,6 +88,13 @@ TW_NO_SCREEN_TIMEOUT := true
 TW_NO_CPU_TEMP := true
 TW_BRIGHTNESS_PATH := "/brightness"
 
+# SELinux
+#include device/nvidia/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += \
+#    device/google/molly/sepolicy
+
+#BOARD_SEPOLICY_UNION += \
+
 # Wifi related defines
 BOARD_HAVE_MARVELL_WIFI          := true
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -96,21 +105,3 @@ BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_mrvl
 WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
 WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/mrvl/sd8797_uapsta.bin"
-
-# Anything below this line is being shunned and therefore not alphabetized.
-
-# SELINUX Defines
-#BOARD_SEPOLICY_DIRS := \
-#    device/google/molly/sepolicy
-
-#BOARD_SEPOLICY_UNION := \
-#    file_contexts \
-#    app.te \
-#    device.te \
-#    drmserver.te \
-#    init_shell.te \
-#    file.te \
-#    system.te \
-#    zygote.te \
-#    domain.te \
-#    ueventd.te

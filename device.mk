@@ -12,7 +12,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+
+# where the kernel is.
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/google/molly-kernel/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES := \
+        $(LOCAL_KERNEL):kernel
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
@@ -24,8 +33,6 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/google/molly/molly-vendor.mk)
-
-$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/molly/overlay
 
