@@ -1,2 +1,0 @@
-add_lunch_combo aosp_molly-eng
-add_lunch_combo aosp_molly-userdebug
