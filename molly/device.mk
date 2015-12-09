@@ -47,18 +47,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_policy.default \
-    audio.primary.default \
-    audio.primary.molly \
     audio.r_submix.default \
     audio.usb.default \
-    libaudiopolicyservice \
-    libaudiopolicymanager \
-    libaudiopolicymanagerdefault \
     libtinyalsa \
-    libaudiospdif \
-    libaudioutils \
-    libaudioresampler
+    audio.primary.molly
 
 USE_CUSTOM_AUDIO_POLICY := 1
 
