@@ -46,11 +46,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio.r_submix.default \
-    audio.usb.default \
     libtinyalsa \
-    audio.primary.molly
+    audio.primary.molly \
+    audio.usb.default \
+    audio.a2dp.default
+    
+    
 
 USE_CUSTOM_AUDIO_POLICY := 1
 
