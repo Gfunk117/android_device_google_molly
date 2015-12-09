@@ -22,17 +22,11 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-# Inherit from molly device
 $(call inherit-product, device/google/molly/device.mk)
 $(call inherit-product, device/google/atv/products/atv_base.mk)
 
 
-TARGET_SCREEN_HEIGHT := 1080
-TARGET_SCREEN_WIDTH := 1920
-PRODUCT_RELEASE_NAME := molly
-
-PRODUCT_NAME := aosp_molly
+PRODUCT_NAME := full_molly
 PRODUCT_DEVICE := molly
 PRODUCT_MODEL := ADT-1
 PRODUCT_BRAND := google
