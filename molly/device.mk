@@ -49,7 +49,8 @@ PRODUCT_PACKAGES += \
     libtinyalsa \
     audio.primary.molly \
     audio.usb.default \
-    audio.a2dp.default
+    audio.a2dp.default \
+    libaudiopolicymanager
     
     
 
